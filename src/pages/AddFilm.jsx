@@ -12,17 +12,8 @@ import { BsPaperclip } from "react-icons/bs";
 import { AiOutlinePlus } from "react-icons/ai";
 
 const styles = {
-  cardd1: {
-    width: "100vw",
-    maxWidth: "100vw",
-    backgroundColor: "black",
-  },
-  cardd: {
-    backgroundColor: "black",
-    margin: "20px",
-  },
   col: {
-    // width: "915px",
+    width: "260px",
   },
   color: {
     backgroundColor: "rgba(210, 210, 210, 0.25)",
@@ -32,10 +23,9 @@ const styles = {
   },
 };
 
-const Addfilm = (show, handleClose) => {
+const Addfilm = ({ show, handleClose }) => {
   const fileInput = useRef(null);
   const handleFileInput = (e) => fileInput.current.click();
-  const [showPw, setShowPw] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -43,14 +33,11 @@ const Addfilm = (show, handleClose) => {
   };
 
   return (
-    <Modal style={styles.cardd1} show={show} onHide={handleClose}>
+    <Modal show={show} onHide={handleClose}>
       <Modal.Header className="bg-dark text-white border-0">
         <Modal.Title>Add Film</Modal.Title>
       </Modal.Header>
       <Modal.Body className="bg-dark text-white border-0">
-        {/* <Card style={styles.cardd1}>
-          <Card.Body className="text-light m-3">
-            <Card.Title className="mb-4">Add Film</Card.Title> */}
         <Form>
           {/* Title */}
           <Row>
@@ -146,7 +133,7 @@ const Addfilm = (show, handleClose) => {
             <Form.Control
               style={styles.color}
               type="text"
-              placeholder="Link FIlm"
+              placeholder="Link Film"
               className="mb-3 text-white formModal"
               name="link"
             />
@@ -166,15 +153,13 @@ const Addfilm = (show, handleClose) => {
           <Form.Group style={{ display: "flex", justifyContent: "flex-end" }}>
             <Button
               variant="danger"
-              className="text-light text-center col-1"
+              className="text-light text-center col-3"
               onClick={handleFileInput}
             >
               Save
             </Button>
           </Form.Group>
         </Form>
-        {/* </Card.Body>
-        </Card> */}
       </Modal.Body>
     </Modal>
   );

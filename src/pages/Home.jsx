@@ -3,9 +3,13 @@ import { Dropdown, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import MovieContainer from "../components/MovieContainer";
 import SeriesContainer from "../components/SeriesContainer";
+import AddFilm from "./AddFilm";
 
 function Home() {
   const [isTvseries, setIsTvseries] = useState(true);
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
   const switchMode = () => {
     setIsTvseries(true);
   };
@@ -50,17 +54,13 @@ function Home() {
             className="d-flex align-content-end justify-content-end"
             style={{ marginLeft: "auto" }}
           >
-            <Button
-              variant="danger"
-              className="text-light text-center fs-6 px-4"
-              // onClick={handleFileInput}
-            >
+            <Button variant="danger" onClick={handleShow}>
               Add Film
             </Button>
+            <AddFilm show={show} handleClose={handleClose} />
           </div>
         </div>
       </div>
-
       <div className="sectionSeries">
         {isTvseries ? <SeriesContainer /> : <MovieContainer />}
       </div>
