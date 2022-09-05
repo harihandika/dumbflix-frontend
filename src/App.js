@@ -2,11 +2,13 @@ import "bootstrap/dist/css/bootstrap.css";
 import Regis from "./components/Regis";
 import Login from "./components/Login";
 import Payment from "./pages/Payment";
-import Addfilm from "./pages/AddFilm";
+import AddFilm from "./pages/AddFilm";
+import AddEpsidoe from "./components/AddEpisode";
 import Profile from "./pages/profile";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./widgets/Layout";
 import Home from "./pages/Home";
+import DetailFilm from "./components/DetailFilms";
 
 function App() {
   return (
@@ -35,7 +37,16 @@ function App() {
           path="/addfilm"
           element={
             <Layout>
-              <Addfilm />
+              <AddFilm />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/addepisode"
+          element={
+            <Layout>
+              <AddFilm />
             </Layout>
           }
         />
@@ -45,6 +56,15 @@ function App() {
           element={
             <Layout>
               <Profile />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/detailfilm"
+          element={
+            <Layout>
+              <DetailFilm />
             </Layout>
           }
         />

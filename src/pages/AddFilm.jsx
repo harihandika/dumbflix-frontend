@@ -27,7 +27,7 @@ const styles = {
   },
 };
 
-const Addfilm = (show, handleClose) => {
+const AddFilm = (show, handleClose) => {
   const fileInput = useRef(null);
   const handleFileInput = (e) => fileInput.current.click();
 
@@ -162,4 +162,4 @@ const Addfilm = (show, handleClose) => {
   );
 };
 
-export default Addfilm;
+export default AddFilm;
