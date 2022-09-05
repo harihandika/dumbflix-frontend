@@ -12,12 +12,8 @@ import { BsPaperclip } from "react-icons/bs";
 import { AiOutlinePlus } from "react-icons/ai";
 
 const styles = {
-  cardd: {
-    backgroundColor: "black",
-    margin: "20px",
-  },
   col: {
-    width: "915px",
+    width: "260px",
   },
   color: {
     backgroundColor: "rgba(210, 210, 210, 0.25)",
@@ -27,14 +23,21 @@ const styles = {
   },
 };
 
-const Addfilm = (show, handleClose) => {
+const Addfilm = ({ show, handleClose }) => {
   const fileInput = useRef(null);
   const handleFileInput = (e) => fileInput.current.click();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    handleClose();
+  };
 
   return (
-    <Card style={styles.cardd}>
-      <Card.Body className="text-light m-3">
-        <Card.Title className="mb-4">Add Film</Card.Title>
+    <Modal show={show} onHide={handleClose}>
+      <Modal.Header className="bg-dark text-white border-0">
+        <Modal.Title>Add Film</Modal.Title>
+      </Modal.Header>
+      <Modal.Body className="bg-dark text-white border-0">
         <Form>
           {/* Title */}
           <Row>
@@ -44,7 +47,7 @@ const Addfilm = (show, handleClose) => {
                   style={styles.color}
                   type="text"
                   placeholder="Title"
-                  className="mb-3 text-white "
+                  className="mb-3 text-white formModal"
                   name="title"
                   autoFocus
                 />
@@ -70,7 +73,7 @@ const Addfilm = (show, handleClose) => {
               style={styles.color}
               type="text"
               placeholder="Year"
-              className="mb-3 text-white"
+              className="mb-3 text-white formModal"
               name="year"
             />
           </Form.Group>
@@ -81,7 +84,7 @@ const Addfilm = (show, handleClose) => {
               style={styles.color}
               type="text"
               placeholder="Category"
-              className="mb-3 text-white "
+              className="mb-3 text-white formModal"
               name="category"
             />
           </Form.Group>
@@ -90,7 +93,7 @@ const Addfilm = (show, handleClose) => {
             <Form.Control
               style={styles.color}
               as="textarea"
-              className="mb-3 text-white "
+              className="mb-3 text-white formModal"
               placeholder="Description"
               name="description"
             />
@@ -106,7 +109,7 @@ const Addfilm = (show, handleClose) => {
                   style={styles.color}
                   type="text"
                   placeholder="Title Episode"
-                  className="mb-3 text-white "
+                  className="mb-3 text-white formModal"
                   name="titleEpisode"
                 />
               </Form.Group>
@@ -130,8 +133,8 @@ const Addfilm = (show, handleClose) => {
             <Form.Control
               style={styles.color}
               type="text"
-              placeholder="Link FIlm"
-              className="mb-3 text-white "
+              placeholder="Link Film"
+              className="mb-3 text-white formModal"
               name="link"
             />
           </Form.Group>
@@ -150,15 +153,15 @@ const Addfilm = (show, handleClose) => {
           <Form.Group style={{ display: "flex", justifyContent: "flex-end" }}>
             <Button
               variant="danger"
-              className="text-light text-center col-1"
+              className="text-light text-center col-3"
               onClick={handleFileInput}
             >
               Save
             </Button>
           </Form.Group>
         </Form>
-      </Card.Body>
-    </Card>
+      </Modal.Body>
+    </Modal>
   );
 };
 
