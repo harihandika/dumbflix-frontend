@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function SeriesList({ seriesImg, title, year }) {
   return (
-    <Link to="/video" className="text-decoration-none">
+    <Link to="/detailfilm" className="text-decoration-none">
       <Card className="rounded border-0 bg-black text-white">
         <Card.Img variant="top" src={seriesImg} />
         <Card.Body>

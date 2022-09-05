@@ -3,7 +3,7 @@ import Regis from "./components/Regis";
 import Login from "./components/Login";
 import Payment from "./pages/Payment";
 import AddFilm from "./pages/AddFilm";
-import AddEpsidoe from "./components/AddEpisode";
+import AddEpisode from "./components/AddEpisode";
 import Profile from "./pages/profile";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./widgets/Layout";
@@ -46,7 +46,7 @@ function App() {
           path="/addepisode"
           element={
             <Layout>
-              <AddFilm />
+              <AddEpisode />
             </Layout>
           }
         />

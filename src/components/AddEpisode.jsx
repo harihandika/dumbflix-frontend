@@ -36,7 +36,7 @@ const AddEpisode = ({ show, handleClose }) => {
     <Modal
       show={show}
       onHide={handleClose}
-      style={{ width: "950px", justifyContent: "center" }}
+      style={{ width: "1000px", justifyContent: "center", marginTop: "100px" }}
     >
       <div style={{ width: "700px" }}>
         <Modal.Header className="bg-dark text-white border-0">

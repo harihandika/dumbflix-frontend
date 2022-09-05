@@ -5,7 +5,7 @@ import userPhoto from "../img/user.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { FaSignOutAlt, FaFilm, FaDollarSign } from "react-icons/fa";
+import { FaUser, FaMoneyCheckAlt, FaSignOutAlt, FaFilm } from "react-icons/fa";
 
 const Head = ({}) => {
   const [isLogin, setIsLogin] = useState(true);
@@ -33,15 +33,15 @@ const Head = ({}) => {
             <img src={userPhoto} width={35} alt="user" />
           </Dropdown.Toggle>
           <Dropdown.Menu variant="dark">
-            <Dropdown.Item as={Link} to="/">
-              <FaFilm className="text-danger me-2 fs-5" /> Film
+            <Dropdown.Item as={Link} to="/profile">
+              <FaUser className="text-danger ms-2" /> Profile
             </Dropdown.Item>
             <Dropdown.Item as={Link} to="/payment">
-              <FaDollarSign className="text-danger me fs-5" /> Transaction
+              <FaMoneyCheckAlt className="text-danger ms-2" /> Pay
             </Dropdown.Item>
             <Dropdown.Divider className="bg-light dropDivid" />
             <Dropdown.Item href="#/action-3" onClick={() => setIsLogin(false)}>
-              <FaSignOutAlt className="text-danger me-2 fs-5" /> Logout
+              <FaSignOutAlt className="text-danger ms-2" /> Logout
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
