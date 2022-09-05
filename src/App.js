@@ -1,34 +1,42 @@
-import "bootstrap/dist/css/bootstrap.css";
-import Regis from "./components/Regis";
-import Login from "./components/Login";
-import Payment from "./pages/Payment";
-import AddFilm from "./pages/AddFilm";
-import AddEpisode from "./components/AddEpisode";
-import Profile from "./pages/profile";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./widgets/Layout";
+import React from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Movies from "./pages/Movies";
 import Home from "./pages/Home";
-import DetailFilm from "./components/DetailFilms";
+import TVShows from "./pages/TVSeries";
+import FilmDetails from "./pages/FilmDetails";
+import ProfileDetails from "./pages/ProfileDetails";
+import "bootstrap/dist/css/bootstrap.css";
+import Transaction from "./pages/Transaction";
+import AddFilm from "./pages/AddFilm";
+import Layout from "./widgets/Layout";
+import HomeAdmin from "./pages/HomeAdmin";
+import Detailadmin from "./components/admin/DetailFilmsadmin";
+import Payment from "./pages/Payment";
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route />
-
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/tvshows" element={<TVShows />} />
+        <Route path="/details" element={<FilmDetails />} />
+        <Route path="/profile" element={<ProfileDetails />} />
+        <Route path="/payment" element={<Payment />} />
         <Route
-          path="/"
+          path="/homeadmin"
           element={
             <Layout>
-              <Home />
+              <HomeAdmin />
             </Layout>
           }
         />
+
         <Route
-          path="/payment"
+          path="/transaction"
           element={
             <Layout>
-              <Payment />
+              <Transaction />
             </Layout>
           }
         />
@@ -43,28 +51,10 @@ function App() {
         />
 
         <Route
-          path="/addepisode"
+          path="/detailadmin"
           element={
             <Layout>
-              <AddEpisode />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/profile"
-          element={
-            <Layout>
-              <Profile />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/detailfilm"
-          element={
-            <Layout>
-              <DetailFilm />
+              <Detailadmin />
             </Layout>
           }
         />
@@ -72,5 +62,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;

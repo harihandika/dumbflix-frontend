@@ -1,13 +1,5 @@
 import React, { useRef, useState } from "react";
-import {
-  Form,
-  Card,
-  Container,
-  Row,
-  Col,
-  Modal,
-  Button,
-} from "react-bootstrap";
+import { Form, Card, Row, Col, Button } from "react-bootstrap";
 import { BsPaperclip } from "react-icons/bs";
 import { AiOutlinePlus } from "react-icons/ai";
 
@@ -24,6 +16,9 @@ const styles = {
     resize: "none",
     borderColor: "white",
     boxShadow: "none",
+  },
+  select: {
+    backgroundColor: "rgba(210, 210, 210, 0.25)",
   },
 };
 
@@ -77,13 +72,19 @@ const AddFilm = (show, handleClose) => {
 
           {/* category */}
           <Form.Group className="mb-3" controlId="category">
-            <Form.Control
+            <Form.Select
               style={styles.color}
-              type="text"
-              placeholder="Category"
-              className="mb-3 text-white "
-              name="category"
-            />
+              aria-label="Default select example"
+              className="text-secondary"
+            >
+              <option hidden selected>
+                Category
+              </option>
+              <option variant="danger" value="TV Series">
+                TV Series
+              </option>
+              <option value="Movies">Movies</option>
+            </Form.Select>
           </Form.Group>
           {/* description */}
           <Form.Group className="mb-3" controlId="description">

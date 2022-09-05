@@ -1,10 +1,10 @@
 import React from "react";
-import Head from "../components/Head";
+import NavbarAdmin from "../components/admin/NavbarAdmin";
 
 function Layout(props) {
   return (
     <>
-      <Head />
+      <NavbarAdmin />
       {props.children}
     </>
   );
