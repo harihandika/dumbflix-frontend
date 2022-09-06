@@ -1,54 +1,53 @@
-import { Button, Form } from "react-bootstrap";
-import PaymentDescription from "../img/PaymentDescription.png";
+import React from "react";
+import { Form, Button } from "react-bootstrap";
+import { RiAttachmentFill } from "react-icons/ri";
 
-const Paymentuser = () => {
+function Paymentuser() {
   return (
-    <Form style={{ marginTop: "8rem" }}>
-      <div style={{ marginBottom: "40px" }}>
-        <h1
-          style={{
-            color: "whitesmoke",
-            textAlign: "center",
-            marginBottom: "20px",
-          }}
-        >
-          Premium
-        </h1>
-        <p style={{ textAlign: "center" }}>
-          <img src={PaymentDescription} alt="" />
+    <div className="container-fluid sectionPayment">
+      <div className="text-center text-light">
+        <h1 className="fs-2 fw-bold mb-5">Premium</h1>
+        <p className="pPayment">
+          Bayar Sekarang dan nikmati streaming film-film yang kekinian dari{" "}
+          <span className="text-danger fw-bold">DUMBFLIX</span>
         </p>
-      </div>
-      <Form.Group
-        style={{ width: "25rem", textAlign: "center", marginLeft: "30rem" }}
-        className="mb-3"
-        controlId="formBasicEmail"
-      >
-        <Form.Control
-          className="bg-dark text-light"
-          type="email"
-          placeholder="Input your number account"
-        />
-        <Form.Text className="text-muted">
-          We'll never share your account number with anyone else.
-        </Form.Text>
-      </Form.Group>
 
-      <Form.Group
-        style={{ width: "25rem", marginLeft: "30rem" }}
-        controlId="formFile"
-        className="mb-3"
-      >
-        <Form.Control className="bg-dark text-light" type="file" />
-      </Form.Group>
-      <Button
-        style={{ width: "25rem", marginLeft: "30rem" }}
-        variant="danger"
-        type="submit"
-      >
-        Kirim
-      </Button>
-    </Form>
+        <div>
+          <p className="text-danger fw-bold">
+            DUMBFLIX <span className="text-light">: 0981312323</span>{" "}
+          </p>
+        </div>
+
+        <Form style={{ width: "60%", margin: "20px auto" }}>
+          <Form.Group className="mb-3" controlId="accountNumber">
+            <Form.Control
+              type="email"
+              placeholder="Input your account number"
+              className="border border-light border-3 formPayment"
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-5" controlId="formBasicPassword">
+            <Form.Label className="labelInputFile rounded">
+              Attache proof of transfer{" "}
+              <span>
+                <RiAttachmentFill style={{ fontSize: "30px" }} />
+              </span>
+            </Form.Label>
+            <Form.Control type="file" placeholder="Password" />
+          </Form.Group>
+
+          <Button
+            variant="primary"
+            type="submit"
+            className="border-0 btnSubmitPayment py-2 fw-bold"
+          >
+            Kirim
+          </Button>
+        </Form>
+      </div>
+    </div>
   );
-};
+}
 
 export default Paymentuser;
