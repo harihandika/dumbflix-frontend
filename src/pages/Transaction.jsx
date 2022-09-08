@@ -240,7 +240,6 @@ const Transaction = () => {
                   </Dropdown.Menu>
                 </Dropdown>
               </td>
-              {/* <BsFillCaretDownFill color="blue" /> */}
             </tr>
           </tbody>
         </Table>

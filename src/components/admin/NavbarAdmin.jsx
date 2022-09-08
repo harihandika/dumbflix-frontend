@@ -4,15 +4,10 @@ import dumbflix from "../../img/dumbflix.png";
 import userPhoto from "../../img/user.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import { FaSignOutAlt, FaFilm, FaDollarSign } from "react-icons/fa";
 
 const NavbarAdmin = ({}) => {
   const [isLogin, setIsLogin] = useState(true);
-  // useEffect(() => {
-  //   if (user) setIsLogin(true);
-  //   else setIsLogin(false);
-  // }, [user]);
 
   return (
     <Navbar bg="dark" expand="lg" className="sticky-sm-top">
@@ -40,7 +35,11 @@ const NavbarAdmin = ({}) => {
               <FaDollarSign className="text-danger me fs-5" /> Transaction
             </Dropdown.Item>
             <Dropdown.Divider className="bg-light dropDivid" />
-            <Dropdown.Item href="#/action-3" onClick={() => setIsLogin(false)}>
+            <Dropdown.Item
+              as={Link}
+              to="/homeadmin"
+              onClick={() => setIsLogin(false)}
+            >
               <FaSignOutAlt className="text-danger me-2 fs-5" /> Logout
             </Dropdown.Item>
           </Dropdown.Menu>

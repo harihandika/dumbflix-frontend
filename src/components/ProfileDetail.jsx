@@ -4,7 +4,15 @@ import ProfileIcon from "../img/profileIcon.jpg";
 import "../css/Profile.modules.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { FaEnvelope, FaFemale, FaMale, FaMapMarked, FaPhone, FaRegMoneyBillAlt, FaUserCircle } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaFemale,
+  FaMale,
+  FaMapMarked,
+  FaPhone,
+  FaRegMoneyBillAlt,
+  FaUserCircle,
+} from "react-icons/fa";
 import { useRef } from "react";
 
 const initialUserState = {
@@ -70,7 +78,10 @@ const Profile = () => {
     <Container>
       <Row className="justify-content-center">
         <Col md={8}>
-          <Card style={{ width: "800px", height: "650px", marginTop: "70px" }} className="rounded shadow border-0 bg-dark text-white p-5">
+          <Card
+            style={{ width: "800px", height: "650px", marginTop: "70px" }}
+            className="rounded shadow border-0 bg-dark text-white p-5"
+          >
             <div className="d-flex justify-content-between">
               <div className="me-5">
                 <h3>Personal Info</h3>
@@ -97,7 +108,11 @@ const Profile = () => {
                     </div>
                   </div>
                   <div className="d-flex mb-3 align-items-start">
-                    {userData.gender === "Male" ? <FaMale className="text-danger me-3 fs-1" /> : <FaFemale className="text-danger me-3 fs-1" />}
+                    {userData.gender === "Male" ? (
+                      <FaMale className="text-danger me-3 fs-1" />
+                    ) : (
+                      <FaFemale className="text-danger me-3 fs-1" />
+                    )}
                     <div>
                       <h5>{userData.gender}</h5>
                       <p className="text-muted">Gender</p>
@@ -121,11 +136,26 @@ const Profile = () => {
                 </div>
               </div>
               <div>
-                <img src={profileSrc} alt="profile-picture" className="profile__img" />
+                <img
+                  src={profileSrc}
+                  alt="profile-picture"
+                  className="profile__img"
+                />
 
-                <input type="file" ref={hiddenFileInput} accept="image/*" className="d-none" onChange={(e) => handleFileChange(e.target.files[0])} />
+                <input
+                  type="file"
+                  ref={hiddenFileInput}
+                  accept="image/*"
+                  className="d-none"
+                  onChange={(e) => handleFileChange(e.target.files[0])}
+                />
 
-                <Button variant="danger" className="changePhotoBtn mt-2 btn-lg px-2 py-4" onClick={handleFileInput}>
+                <Button
+                  style={{ width: "200px" }}
+                  variant="danger"
+                  className="changePhotoBtn mt-2 btn-lg"
+                  onClick={handleFileInput}
+                >
                   Change Photo
                 </Button>
               </div>

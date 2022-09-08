@@ -87,7 +87,7 @@ const AddEpisode = ({ show, handleClose }) => {
               <Button
                 className="text-light text-center col-4 fw-bold"
                 style={{ backgroundColor: "red", border: "none" }}
-                onClick={handleFileInput}
+                onClick={handleSubmit}
               >
                 Add
               </Button>

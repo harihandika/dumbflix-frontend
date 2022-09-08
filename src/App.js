@@ -12,6 +12,7 @@ import Layout from "./widgets/Layout";
 import HomeAdmin from "./pages/HomeAdmin";
 import Detailadmin from "./components/admin/DetailFilmsadmin";
 import Payment from "./pages/Payment";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -58,6 +59,8 @@ export default function App() {
             </Layout>
           }
         />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
